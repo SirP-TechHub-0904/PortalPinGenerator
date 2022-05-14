@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PortalPinGenerator.Models.Card>
+
+@{
+    ViewBag.Title = "Cards";
+    int sn = 1;
+}
+
+<h2>Cards</h2>
+<div class="pull-right">
+    @using (Html.BeginForm("Cards", "Home", FormMethod.Post))
+    {
+        <input type="text" name="searchString" />
+        <button type="submit" class="btn btn-primary">Filter</button>
+
+    }
+</div>
+<div id="divTableDataHolder">
+    
+    <button class="btn btn-primary" id="myButtonControlID">Export Table data into Excel</button>
+   <br />
+     <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>
+                @Html.DisplayNameFor(model => model.PinNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.School)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BatchNumber)
+            </th>
+           
+        </tr>
+
+        @foreach (var item in Model) {
+    <tr>
+        <td>@(sn++)</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.School)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BatchNumber)
+        </td>
+
+    </tr>
+}
+
+    </table>
+    </div>
+    @section scripts{
+        <script>
+            $("[id$=myButtonControlID]").click(function (e) {
+                window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id$=divTableDataHolder]').html()));
+                e.preventDefault();
+            });
+        </script>
+    }
