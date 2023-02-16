@@ -54,37 +54,37 @@ namespace PortalPinGenerator.Controllers
                     card.PinNumber = (number).ToString();
                     card.SerialNumber = (rng.Next(1, 1000000) + 100000).ToString("D6").Substring(0, 6);
                     card.School = school;
-                    card.BatchNumber = school + "/03" + index.ToString("D3").Substring(0, 3);
+                    card.BatchNumber = school + "/0160223" + index.ToString("D3").Substring(0, 3);
 
                     db.Cards.Add(card);
                     
                 }
                 db.SaveChanges();
-                Card Icard = db.Cards.Create();
+                //Card Icard = db.Cards.Create();
                 
-                Icard.PinNumber = "XXXXXXXXXXXXXXXXXXX";
-                Icard.SerialNumber = "XXXXXXXXXXXXXXXXXX";
-                Icard.School = "XXXXXXXXXXXXXXXXXXXXXXX";
-                Icard.BatchNumber = "XXXXXXXXXXXXXXXXXXXXXXXXX";
+                //Icard.PinNumber = "XXXXXXXXXXXXXXXXXXX";
+                //Icard.SerialNumber = "XXXXXXXXXXXXXXXXXX";
+                //Icard.School = "XXXXXXXXXXXXXXXXXXXXXXX";
+                //Icard.BatchNumber = "XXXXXXXXXXXXXXXXXXXXXXXXX";
 
-                db.Cards.Add(Icard);
-                Card Iicard = db.Cards.Create();
+                //db.Cards.Add(Icard);
+                //Card Iicard = db.Cards.Create();
 
-                Iicard.PinNumber = "XXXXXXXXXXXXXXXXXXX";
-                Iicard.SerialNumber = "XXXXXXXXXXXXXXXXXX";
-                Iicard.School = "XXXXXXXXXXXXXXXXXXXXXXX";
-                Iicard.BatchNumber = "XXXXXXXXXXXXXXXXXXXXXXXXX";
+                //Iicard.PinNumber = "XXXXXXXXXXXXXXXXXXX";
+                //Iicard.SerialNumber = "XXXXXXXXXXXXXXXXXX";
+                //Iicard.School = "XXXXXXXXXXXXXXXXXXXXXXX";
+                //Iicard.BatchNumber = "XXXXXXXXXXXXXXXXXXXXXXXXX";
 
-                db.Cards.Add(Iicard);
-                Card Iocard = db.Cards.Create();
+                //db.Cards.Add(Iicard);
+                //Card Iocard = db.Cards.Create();
 
-                Iocard.PinNumber = "XXXXXXXXXXXXXXXXXXX";
-                Iocard.SerialNumber = "XXXXXXXXXXXXXXXXXX";
-                Iocard.School = "XXXXXXXXXXXXXXXXXXXXXXX";
-                Iocard.BatchNumber = "XXXXXXXXXXXXXXXXXXXXXXXXX";
+                //Iocard.PinNumber = "XXXXXXXXXXXXXXXXXXX";
+                //Iocard.SerialNumber = "XXXXXXXXXXXXXXXXXX";
+                //Iocard.School = "XXXXXXXXXXXXXXXXXXXXXXX";
+                //Iocard.BatchNumber = "XXXXXXXXXXXXXXXXXXXXXXXXX";
 
-                db.Cards.Add(Iocard);
-                db.SaveChanges();
+                //db.Cards.Add(Iocard);
+                //db.SaveChanges();
 
             }
 
@@ -100,7 +100,7 @@ namespace PortalPinGenerator.Controllers
         {
             //if (ModelState.IsValid)
             //{
-                GetNumber(12, "HRSSU2021-REG");
+                GetNumber(12, "MJNI-RESULT");
                 return RedirectToAction("CardList");
             //}
             //return View();
