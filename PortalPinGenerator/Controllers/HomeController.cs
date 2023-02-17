@@ -35,9 +35,9 @@ namespace PortalPinGenerator.Controllers
         {
             var db = new ApplicationDbContext();
 
-            for (int index = 1; index <= 15; index++)
+            for (int index = 1; index <= 3; index++)
             {
-                for (int xindex = 1; xindex <= 200; xindex++)
+                for (int xindex = 1; xindex <= 100; xindex++)
                 {
 
                     Card card = db.Cards.Create();
@@ -100,7 +100,7 @@ namespace PortalPinGenerator.Controllers
         {
             //if (ModelState.IsValid)
             //{
-                GetNumber(12, "MJNI-RESULT");
+                GetNumber(12, "MJNI-REGISTRATION");
                 return RedirectToAction("CardList");
             //}
             //return View();
